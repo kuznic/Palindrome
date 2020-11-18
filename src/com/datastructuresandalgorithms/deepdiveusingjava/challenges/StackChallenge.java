@@ -11,8 +11,8 @@ public class StackChallenge {
         System.out.print("Enter string literal:");
         String string = scanner.nextLine();
 
-        String literal = string.replaceAll("\\W", "");
-        String [] literalCharacters = literal.split("");
+        String stringNoPunctuation = string.replaceAll("\\W", "");
+        String [] literalCharacters = stringNoPunctuation.split("");
 
         LinkedList<String> stack = new LinkedList<>();
 
@@ -29,7 +29,7 @@ public class StackChallenge {
             stack.pop();
         }
 
-        if(builder.toString().equalsIgnoreCase(literal))
+        if(builder.toString().equalsIgnoreCase(stringNoPunctuation))
         {
             System.out.println(string + "(" + builder + ")" + " is a palindrome");
         }
