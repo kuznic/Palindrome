@@ -14,19 +14,19 @@ public class StackChallenge {
         String literal = string.replaceAll("\\W", "");
         String [] literalCharacters = literal.split("");
 
-        LinkedList<String> stringLiteral = new LinkedList<>();
+        LinkedList<String> stack = new LinkedList<>();
 
         for(String s : literalCharacters)
         {
-           stringLiteral.push(s);
+           stack.push(s);
         }
 
         StringBuilder builder = new StringBuilder();
 
-        while(!stringLiteral.isEmpty())
+        while(!stack.isEmpty())
         {
-            builder.append(stringLiteral.peek());
-            stringLiteral.pop();
+            builder.append(stack.peek());
+            stack.pop();
         }
 
         if(builder.toString().equalsIgnoreCase(literal))
